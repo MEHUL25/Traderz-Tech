@@ -1,0 +1,16 @@
+.table-heading{
+    background-color: #1f4f91;
+    color: #ffffff;
+    border-radius: 10px 10px 0px 0px;
+    }
+    table tbody p i{
+    font-size: 25px;
+    }
+    .tablefooter{
+    color: #008000;
+    font-weight: 600;
+    }
+    table tbody tr td{
+          font-weight: 500;
+          letter-spacing: 1px;
+    }

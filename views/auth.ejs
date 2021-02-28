@@ -1,0 +1,59 @@
+<%- include('includes/head.ejs') %>
+
+            <link rel="stylesheet" href="/css/admin.css">
+              <style>
+                .yyy{ 
+                    padding-top: 7vh;
+                    padding-bottom: 10vh;
+                    width:auto;
+                    margin: auto;
+                    background-color: #F7F7F7;
+                }
+          </style>
+
+    </head>
+
+
+
+    <body >
+      
+      <%- include('includes/nav.ejs') %>
+
+        <!--===== Contents == =-->
+        <main class="yyy">
+            <div id="cards_landscape_wrap-2">
+              <div class="container fluid">
+                  <div class="card-flyer">
+                      <div class="text-box">
+                          <div class="text-container">
+      
+                            <form action="/Login" class="" method="POST">
+      
+                                  <h2 style="text-align:center">Admin Login</h2>
+                                  <ul class="form-style-1">
+      
+                                    <li>
+                                          <label>Login Details <span class="required">*</span></label>
+                                          <input type="text" name="username" class="field-long" placeholder="Username" />
+                                          <br><br>
+                                          <input type="password" name="password" class="field-long" placeholder="Password" />
+                                          <br><br>
+                                    </li>
+                                          
+                                  <br><br>
+                                  <button class="btn btn-primary button1" type="submit">Login</button>
+      
+                            </form>
+      
+                          </div>
+                      </div>
+                  </div>
+              </div>
+            </div>
+        </main>
+        <!--===== End of Contents =====-->
+
+      <%- include('includes/foot.ejs') %>
+
+
+        

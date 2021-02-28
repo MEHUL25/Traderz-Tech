@@ -1,0 +1,23 @@
+npm install --save ejs pug express-handlebars
+
+
+<%= (typeof pageTitle != "undefined" ? (pageTitle) : "")  %>
+
+
+
+<%= (typeof path!= "undefined" ? (path === '/Watchlist' ? 'active' : "") : "")  %>
+
+
+<!--===== HEADER =====
+<%= pageTitle%>
+<%= path === '/Watchlist' ? 'active' : '' %>
+
+<%= path === '/Statistics' ? 'active' : '' %>
+
+<%= path === '/Guidelines' ? 'active' : '' %>
+<%= path === '/Others' ? 'active' : '' %>
+<%= path === '/Admin' ? 'active' : '' %>
+
+-->
+
+

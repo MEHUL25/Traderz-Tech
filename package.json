@@ -1,0 +1,39 @@
+{
+  "name": "hello",
+  "version": "1.0.0",
+  "description": "a",
+  "main": "index.js",
+  "engines":{
+    "node":"12.18.3"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "MONGO_USER=test01 MONGO_PASSWORD=test01 MONGO_DEFAULT_DATABASE=tradetech ADMIN_USERNAME=admin ADMIN_PASSWORD=admin01 SENDER_EMAIL=mehull2412@gmail.com RECEIVER_EMAIL=mehullokhande9@gmail.com SEND_GRID_KEY=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 node app.js",
+    "start-server": "node app.js",
+    "start:dev": "nodemon app.js"
+  },
+  "author": "Mehul",
+  "license": "ISC",
+  "dependencies": {
+    "bcrypt": "^5.0.0",
+    "bcryptjs": "^2.4.3",
+    "body-parser": "^1.19.0",
+    "compression": "^1.7.4",
+    "connect-mongodb-session": "^2.4.1",
+    "cookie-parser": "^1.4.5",
+    "csurf": "^1.11.0",
+    "dotenv": "^8.2.0",
+    "ejs": "^3.1.6",
+    "express": "^4.17.1",
+    "express-handlebars": "^5.2.0",
+    "express-partials": "^0.3.0",
+    "express-session": "^1.17.1",
+    "helmet": "^4.4.1",
+    "mongodb": "^3.6.4",
+    "mongoose": "^5.11.16",
+    "morgan": "^1.10.0",
+    "nodemailer": "^6.4.18",
+    "nodemailer-sendgrid-transport": "^0.2.0",
+    "pug": "^3.0.0"
+  }
+}

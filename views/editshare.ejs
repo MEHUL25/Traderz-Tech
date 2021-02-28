@@ -1,0 +1,98 @@
+<%- include('includes/head.ejs') %>
+
+            <style>
+                  .yyy{ height:55vh; margin:0; }
+            </style>
+            <link rel="stylesheet" href="/css/admin.css">
+    </head>
+
+
+
+    <body >
+      
+      <%- include('includes/nav.ejs') %>
+
+        <!--===== Contents == =-->
+        <main>
+            <div id="cards_landscape_wrap-2">
+              <div class="container fluid">
+                  <div class="card-flyer">
+                      <div class="text-box">
+                          <div class="text-container">
+      
+                            <form action="/admin/edit-share" class="" method="POST">
+
+                                  <h2 style="text-align:center">Update Call</h2>
+                                  <ul class="form-style-1">
+      
+                                    <li>
+                                          <label>Stock Details <span class="required">*</span></label>
+                                          <input type="text" name="name" class="field-long" value="<%=product.name%>" placeholder="Stock Name" />
+                                          <br><br>
+      
+                                          <input type="number" name="buyabove" class="field-divided" value="<%=product.buyabove%>" placeholder="Buy Above" />
+                                          <input type="text" name="callremark" class="field-divided" value="<%=product.callremark%>" placeholder="Remark(Active/Not Active)" />
+                                          <br><br>
+      
+                                          <label>&nbsp;&nbsp;&nbsp;Call Added Date : &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                          <input type="date" name="calladdeddate" value="<%=product.calladdeddate%>" class="field-divided"  /></label>
+                                          <br>
+      
+                                          <input type="text" name="hreflink" class="field-long" value="<%=product.hreflink%>" placeholder="HREF"/>
+                                            <br><br>
+      
+                                          <label >&nbsp;&nbsp;&nbsp;Call Active Date : &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                          <input type="date" name="callactivedate" value="<%=product.callactivedate%>" class="field-divided"  /></label>
+                                          <hr>
+      
+                                    </li>
+                                          <li>
+                                              <label>Target 1 <span class="required">*</span></label>
+                                              <input type="number" name="target1" value="<%=product.target1%>" class="field-divided"  placeholder="Target 1"/>
+                                              <input type="text" name="target1remark" value="<%=product.target1remark%>" class="field-divided" placeholder="Remark(Active/Not Active)" />
+                                                <br><br>
+      
+                                                <label >&nbsp;&nbsp;&nbsp;Active Date : &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                                <input type="date" name="target1activedate" value="<%=product.target1activedate%>" class="field-divided"  /></label>
+                                                <hr>
+                                          </li>
+                                          <li>
+                                              <label>Target 2<span class="required">*</span></label>
+                                              <input type="number" name="target2" value="<%=product.target2%>" class="field-divided"  placeholder="Target 2"/>
+                                              <input type="text" name="target2remark" value="<%=product.target2remark%>" class="field-divided" placeholder="Remark(Active/Not Active)" />
+                                                <br><br>
+      
+                                                <label >&nbsp;&nbsp;&nbsp;Active Date : &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                                <input type="date" name="target2activedate" value="<%=product.target2activedate%>" class="field-divided"  /></label>
+                                                <hr>
+                                          </li>
+                                          <li>
+                                              <label>Stop Loss <span class="required">*</span></label>
+                                              <input type="number" name="stoploss" value="<%=product.stoploss%>" class="field-divided"  placeholder="Stop Loss"/>
+                                              <input type="text" name="stoplossremark" value="<%=product.stoplossremark%>" class="field-divided" placeholder="Remark(Active/Not Active)" />
+                                                <br><br>
+      
+                                                <label >&nbsp;&nbsp;&nbsp;Active Date : &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                                <input type="date" name="stoplossdate" value="<%=product.stoplossdate%>" class="field-divided"  /></label>
+                                                <input type="hidden" value="<%= product._id %>" name="productId">
+                                                <hr>
+                                          </li>
+                                  </ul>
+                                  
+                                  <br><br>
+                                  <button class="btn btn-primary button1" type="submit">Update Call</button>
+      
+                            </form>
+      
+                          </div>
+                      </div>
+                  </div>
+              </div>
+            </div>
+        </main>
+        <!--===== End of Contents =====-->
+
+      <%- include('includes/foot.ejs') %>
+
+
+        

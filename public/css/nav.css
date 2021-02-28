@@ -1,0 +1,31 @@
+.btnnav {
+      font: inherit;
+      border: 1px solid;
+      color: white;
+      background: #1f4f91;
+      border-radius: 3px;
+      cursor: pointer;
+    }
+ 
+    .btnnav:hover,
+    .act 
+    {
+      background-color: white;
+      color: #1f4f91;
+    } 
+
+    .btnsea {
+      font: inherit;
+      border: 1px solid;
+      color: white;
+      background: #1f4f91;
+      border-radius: 3px;
+      cursor: pointer;
+    }
+ 
+    .btnsea:hover,
+    .act 
+    {
+      background-color: white;
+      color: #1f4f91;
+    } 

@@ -1,0 +1,81 @@
+<!--===== HEADER =====  -->
+<header class="l-header" >
+      <nav class="navbar navbar-expand-lg navbar-dark " style="background-color: #1f4f91;"  >
+
+            <a class="navbar-brand" href="/"> <img src="img/logo.jpg" width="30" height="30" class="d-inline-block align-top" alt="">
+            Traderz Tech </a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+              <span class="navbar-toggler-icon"></span>
+            </button>
+
+
+
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+              <ul class="navbar-nav mr-auto">
+                  <li class="nav-item <%= (typeof path!= "undefined" ? (path === '/Watchlist' ? 'active' : "") : "")  %> " >
+                        <a class="nav-link" href="/Watchlist">Watch List </a>
+                  </li>
+
+                  <li class="nav-item <%= (typeof path!= "undefined" ? (path === '/Statistics' ? 'active' : "") : "")  %> ">
+                        <a class="nav-link" href="/Statistics">Statistics</a>
+                  </li>
+
+                  <li class="nav-item <%= (typeof path!= "undefined" ? (path === '/Guidelines' ? 'active' : "") : "")  %> ">
+                        <a class="nav-link" href="/Guidelines">Guidelines<span class="sr-only">(current)</span></a>
+                  </li>
+
+                  <li class="nav-item <%= (typeof path!= "undefined" ? (path === '/Others' ? 'active' : "") : "")  %> ">
+                        <a class="nav-link" href="/Others">Others</a>
+                  </li>
+                  <% if(typeof(isAuthenticated)!= "undefined"){ %>
+                        <% if (isAuthenticated) { %>
+                              <li class="nav-item <%= (typeof path!= "undefined" ? (path === '/Admin' ? 'active' : "") : "")  %>">
+                                    <a class="nav-link" href="/Admin">Admin</a>
+                              </li>
+                        <% } %>
+                  <% } %>
+              </ul>
+
+              <form class="form-inline my-2 my-lg-0" action="/Watchlist" method="POST"> 
+                  <input class="form-control mr-sm-2" type="text" name="search" placeholder="Search" aria-label="Search">
+                  <div style="padding-right: 0.5vw;">
+                  <select name="choice">
+                        <option value="Latest" selected >Latest</option>
+                        <option value="name" >Share Name</option>
+                        <option value="callremark">Active</option>
+                        <option value="target1remark">T1 Done</option>
+                        <option value="target2remark">T2 Done</option>
+                        <option value="stoplossremark">SL Hit</option>
+                  </select>
+                  </div>
+                  <button class="btn btn-outline-success my-2 my-sm-0 btnsea" type="submit">Search</button>
+             </form>
+
+              <ul class="form-inline my-2 my-lg-0" >
+                  <% if(typeof(isAuthenticated)!= "undefined"){ %>
+                        <% if (!isAuthenticated) { %>
+                              <li style="padding-right: 0.5vw;;">
+                                    <a href="/Login" > <button class="btnnav <%= (typeof path!= "undefined" ? (path === '/Login' ? 'act' : "") : "")  %> my-2 my-sm-0  "> Login  </button> </a>  
+                              </li>
+                        <% } else {%>
+                              <li style="padding-right: 0.5vw;;">
+                                    <form class="form-inline my-2 my-lg-0" action="/Logout" method="POST"> 
+                                          <button class="btnnav my-2 my-sm-0" type="submit">Logout</button>
+                                    </form>  
+                              </li>
+                        <% } %>
+                  <% } else {%>
+                        <li style="padding-right: 0.5vw;;">
+                              <a href="/Login" > <button class="btnnav <%= (typeof path!= "undefined" ? (path === '/Login' ? 'act' : "") : "")  %> my-2 my-sm-0  "> Login  </button> </a>  
+                        </li>
+                  <% } %>
+               </ul>
+              
+
+              
+
+
+            </div>
+          </nav>
+  </header>
+  <!-- ===== END OF HEADER =====-->

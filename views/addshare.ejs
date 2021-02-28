@@ -1,0 +1,113 @@
+<%- include('includes/head.ejs') %>
+
+            <style>
+                  .yyy
+                  { 
+                    height:55vh; 
+                    margin:0; 
+                  }
+            </style>
+            <link rel="stylesheet" href="/css/admin.css">
+            <link rel="icon" href="img/logo.jpg" type="image/x-icon">
+    </head>
+
+
+
+    <body >
+      
+      <%- include('includes/nav.ejs') %>
+
+        <!--===== Contents == =-->
+        
+
+        <main>
+            <div id="cards_landscape_wrap-2">
+              <div class="container fluid">
+                  <div class="card-flyer">
+                      <div class="text-box">
+                          <div class="text-container">
+      
+                            <form action="/admin/add-share" class="" method="POST">
+      
+                                  <h2 style="text-align:center">Add Call</h2>
+                                  <ul class="form-style-1">
+      
+                                          <li>
+                                                <label>Stock Details <span class="required">*</span></label>
+                                                <input type="text" name="name" class="field-long" placeholder="Stock Name" />
+                                                <br><br>
+            
+                                                <input type="number" name="buyabove" class="field-divided" placeholder="Buy Above" step="0.001"/>
+                                                <input type="text" name="callremark" class="field-divided" placeholder="Remark(Active/Not Active)" />
+                                                <br><br>
+            
+                                                <label>&nbsp;&nbsp;&nbsp;Call Added Date : &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                                <input type="date" name="calladdeddate" class="field-divided"  /></label>
+                                                <br>
+            
+                                                <input type="text" name="hreflink" class="field-long" placeholder="HREF"/>
+                                                  <br><br>
+            
+                                                <label >&nbsp;&nbsp;&nbsp;Call Active Date : &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                                <input type="date" name="callactivedate" class="field-divided"  /></label>
+                                                <hr>
+            
+                                          </li>
+                                          <li>
+                                              <label>Target 1 <span class="required">*</span></label>
+                                              <input type="number" name="target1" class="field-divided"  placeholder="Target 1"/>
+                                              <input type="text" name="target1remark" class="field-divided" placeholder="Remark(Active/Not Active)" />
+                                                <br><br>
+      
+                                                <label >&nbsp;&nbsp;&nbsp;Active Date : &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                                <input type="date" name="target1activedate" class="field-divided"  /></label>
+                                                <hr>
+                                          </li>
+                                          <li>
+                                              <label>Target 2<span class="required">*</span></label>
+                                              <input type="number" name="target2" class="field-divided"  placeholder="Target 2"/>
+                                              <input type="text" name="target2remark" class="field-divided" placeholder="Remark(Active/Not Active)" />
+                                                <br><br>
+      
+                                                <label >&nbsp;&nbsp;&nbsp;Active Date : &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                                <input type="date" name="target2activedate" class="field-divided"  /></label>
+                                                <hr>
+                                          </li>
+                                          <li>
+                                              <label>Stop Loss <span class="required">*</span></label>
+                                              <input type="number" name="stoploss" class="field-divided"  placeholder="Stop Loss"/>
+                                              <input type="text" name="stoplossremark" class="field-divided" placeholder="Remark(Active/Not Active)" />
+                                                <br><br>
+      
+                                                <label >&nbsp;&nbsp;&nbsp;Active Date : &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                                <input type="date" name="stoplossdate" class="field-divided"  /></label>
+                                                <hr>
+                                          </li>
+                                  </ul>
+                                  <br><br>
+                                  <button class="btn btn-primary button1" type="submit">Add Call</button>
+      
+                            </form>
+      
+                          </div>
+                      </div>
+                  </div>
+              </div>
+            </div>
+        </main>
+
+        <!--===== End of Contents =====-->
+
+      <%- include('includes/foot.ejs') %>
+
+
+        
+<!--
+
+      <div class="field-divided">
+        <input type="radio" name="callremark" value="Active"><label for="male">Active</label>
+        <input type="radio" name="callremark" value="Not Active">
+        <label for="female">Not Active</label>
+    </div>
+
+    -->

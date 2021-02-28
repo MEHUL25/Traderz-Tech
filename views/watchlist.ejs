@@ -1,0 +1,110 @@
+<%- include('includes/head.ejs') %>
+
+            <link rel="stylesheet" href="/css/card.css">
+            <link rel="stylesheet" href="/css/main.css">
+            <style>
+                  .fa-cog {
+                  color: red;
+                  }
+            </style>
+    </head>
+
+
+
+    <body >
+      
+      <%- include('includes/nav.ejs') %>
+        <!--===== Contents == =-->
+        <% if (shares.length > 0) { %>
+            <div class="grid">
+                        <% for (var i=0;i<shares.length;i++) { %>
+
+                              <div class="container mt-5">
+                                    <div class="row m-0 table-heading">
+                                    <div class="col-sm-4 mt-1">
+                                          <a href="<%= shares[i].hreflink%>"  target="_blank" class="text-white"><h3><%= shares[i].name%></h3></a>
+                                    </div>
+                                    <div class="col-sm-4 mt-2">
+                                    <p class="text-center">CMP-1608.50</p>
+                                    </div>
+                                    <div class="col-sm-4 mt-2">
+                                    <p class="text-center"><%= shares[i].calladdeddate%></p>
+                                    </div>
+                                    </div>
+                              <table class="table table-bordered">
+                                    <thead>
+                                          <tr>
+                                          <th class="text-center">Buy Above</th>
+                                          <th class="text-center">Target 1</th>
+                                          <th class="text-center">Target 2</th>
+                                          <th class="text-center">Stop Loss</th>
+                                          </tr>
+                                    </thead>
+                                    <tbody>
+                                          <tr>
+                                          <td>
+                                                <p class="text-center"><%= shares[i].buyabove%></p>
+                                                <% if (shares[i].callremark === "Active" ) { %>
+                                                <p class="text-center"><%= shares[i].callactivedate%>
+                                                      <br>
+                                                <i style="color:green;" class="fas fa-check-circle"></i>
+                                                </p>
+                                                <% } %>
+                                          </td>
+
+                                          <td>
+                                                <p class="text-center p-0 m-0"><%= shares[i].target1%></p>
+                                                <p class="text-center p-0 m-0"><%= Math.round(((shares[i].target1-shares[i].buyabove)/shares[i].buyabove)*10000)/100  %> %
+                                                <% if (shares[i].target1remark === "Active" ) { %>
+                                                      <p class="text-center"><%= shares[i].target1activedate%>
+                                                      <br>
+                                                <i style="color:green;" class="fas fa-check-circle"></i>
+                                                </p>
+                                                <% } %>
+                                          </td>
+
+
+                                          <td>
+                                                <p class="text-center p-0 m-0"><%= shares[i].target2%></p>
+                                                <p class="text-center p-0 m-0"><%= Math.round(((shares[i].target2-shares[i].buyabove)/shares[i].buyabove)*10000)/100  %> %
+                                                <% if (shares[i].target2remark === "Active" ) { %>
+                                                      <p class="text-center"><%= shares[i].target2activedate%>
+                                                      <br>
+                                                <i style="color:green;" class="fas fa-check-circle"></i>
+                                                </p>
+                                                <% } %>
+                                          </td>
+
+
+                                          <td>
+                                                <p class="text-center p-0 m-0"><%= shares[i].stoploss%></p>
+                                                <p class="text-center p-0 m-0" ><%= Math.round(((shares[i].buyabove-shares[i].stoploss)/shares[i].buyabove)*10000)/100  %> %
+                                                <% if (shares[i].stoplossremark === "Active" ) { %>
+                                                      <p class="text-center"><%= shares[i].stoplossdate%>
+                                                      <br>
+                                                <i style="color:red;" class="fas fa-times-circle"></i>
+                                                </p>
+                                                <% } %>
+                                          </td>
+
+
+                                          </tr>
+                                    </tbody>
+                              </table>
+                                    <h5 class="text-center tablefooter">Remarks - Call<%= shares[i].callremark%></h5>
+                                    <hr>
+                                    <br>
+                              </div>
+                        <% } %>
+                  </div>
+                  <%- include('includes/pagination.ejs', {currentPage: currentPage, nextPage: nextPage, previousPage: previousPage, lastPage: lastPage, hasNextPage: hasNextPage, hasPreviousPage: hasPreviousPage}) %>
+            <% } else { %>
+                  <h1 style="height:55vh; margin:0;padding:20vh;text-align: center;">No Calls Found!</h1>
+            <% } %>
+
+        <!--===== End of Contents =====-->
+
+      <%- include('includes/foot.ejs') %>
+
+
+        

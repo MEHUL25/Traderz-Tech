@@ -8,7 +8,7 @@
   },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "MONGO_USER=test01 MONGO_PASSWORD=test01 MONGO_DEFAULT_DATABASE=tradetech ADMIN_USERNAME=admin ADMIN_PASSWORD=admin01 SENDER_EMAIL=mehull2412@gmail.com RECEIVER_EMAIL=mehullokhande9@gmail.com SEND_GRID_KEY=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 node app.js",
+    "start": "node app.js",
     "start-server": "node app.js",
     "start:dev": "nodemon app.js"
   },
